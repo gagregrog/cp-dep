@@ -1,0 +1,31 @@
+{
+  "name": "copy-package",
+  "version": "1.0.0",
+  "description": "copy a previous projects dependencies to a new project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertMcReed/copy-package.git"
+  },
+  "keywords": [
+    "npm",
+    "copy",
+    "package",
+    "cli"
+  ],
+  "author": "Robert Reed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobertMcReed/copy-package/issues"
+  },
+  "homepage": "https://github.com/RobertMcReed/copy-package#readme",
+  "dependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "jest": "^22.4.2"
+  }
+}
