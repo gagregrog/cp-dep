@@ -1,11 +1,17 @@
 'use strict';
 
 require('jest');
+require('jest-plugin-console-matchers/setup');
 
 const deps = require('../lib/deps.js');
 
+const assets = `${__dirname}/assets`;
+const packageDeps = {
+  dependencies: 'dep1 dep2',
+  devDependencies: 'dep1 dep2 dep3',
+};
+
 describe('lib/deps.js ', () => {
-  const assets = `${__dirname}/assets`;
   describe('#get', () => {
     describe('Asset: both', () => {
       it('should get both deps', () => {
@@ -101,6 +107,14 @@ describe('lib/deps.js ', () => {
             expect(pkgDeps.devDependencies).toBeNull();
           });
       });
+    });
+  });
+
+  describe('#print', () => {
+    it('should log the deps', () => {
+      expect(() => {
+        deps.print(packageDeps, 'both');
+      }).toConsoleLog();
     });
   });
 });
