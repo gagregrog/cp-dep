@@ -1,0 +1,35 @@
+{
+  "name": "cp-dep-test",
+  "version": "1.0.0",
+  "description": "fake description",
+  "main": "./index.js",
+  "preferGlobal": true,
+  "bin": {
+    "cp-pkg-test": "./index.js"
+  },
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/test/cp-dep-test.git"
+  },
+  "keywords": [
+    "npm",
+    "copy",
+    "package",
+    "cli",
+    "dependencies",
+    "devDependencies"
+  ],
+  "author": "Fake Author",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/test/cp-dep-test/issues"
+  },
+  "homepage": "https://github.com/test/cp-dep-test#readme",
+  "dependencies": {
+    "dep1": "^1.2.3",
+    "dep2": "^5.0.0"
+  }
+}

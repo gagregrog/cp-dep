@@ -1,31 +1,34 @@
 {
-  "name": "copy-package",
+  "name": "cp-dep",
   "version": "1.0.0",
-  "description": "copy a previous projects dependencies to a new project",
+  "description": "A CLI to copy or install dependencies to a new project",
   "main": "./index.js",
   "preferGlobal": true,
   "bin": {
     "cp-pkg": "./index.js"
   },
   "scripts": {
-    "test": "jest -i --coverage"
+    "test": "jest -i --coverage",
+    "watch": "jest -i --coverage --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RobertMcReed/copy-package.git"
+    "url": "git+https://github.com/RobertMcReed/cp-dep.git"
   },
   "keywords": [
     "npm",
     "copy",
     "package",
-    "cli"
+    "cli",
+    "dependencies",
+    "devDependencies"
   ],
   "author": "Robert Reed",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RobertMcReed/copy-package/issues"
+    "url": "https://github.com/RobertMcReed/cp-dep/issues"
   },
-  "homepage": "https://github.com/RobertMcReed/copy-package#readme",
+  "homepage": "https://github.com/RobertMcReed/cp-dep#readme",
   "dependencies": {
     "clipboardy": "^1.2.3",
     "fs-extra": "^5.0.0"
@@ -34,6 +37,7 @@
     "eslint": "^4.18.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0",
-    "jest": "^22.4.2"
+    "jest": "^22.4.2",
+    "jest-plugin-console-matchers": "^2.7.0"
   }
 }
