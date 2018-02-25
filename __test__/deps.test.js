@@ -1,14 +1,32 @@
 'use strict';
 
 require('jest');
-require('jest-plugin-console-matchers/setup');
+
+// required for testing console.logs
+global.console = {
+  log: jest.fn(),
+};
 
 const deps = require('../lib/deps.js');
 
 const assets = `${__dirname}/assets`;
 const packageDeps = {
-  dependencies: 'dep1 dep2',
-  devDependencies: 'dep1 dep2 dep3',
+  both: {
+    dependencies: 'both1 both2',
+    devDependencies: 'both1 both2 both3',
+  },
+  full: {
+    dependencies: 'full1 full2',
+    devDependencies: 'full1 full2 full3',
+  },
+  dev: {
+    dependencies: 'dev1 dev2',
+    devDependencies: 'dev1 dev2 dev3',
+  },
+  none: {
+    dependencies: null,
+    devDependencies: null,
+  },
 };
 
 describe('lib/deps.js ', () => {
@@ -112,9 +130,24 @@ describe('lib/deps.js ', () => {
 
   describe('#print', () => {
     it('should log the deps', () => {
-      expect(() => {
-        deps.print(packageDeps, 'both');
-      }).toConsoleLog();
+      deps.print(packageDeps.both, 'both');
+      expect(global.console.log).toHaveBeenCalledWith('Dependencies: both1 both2');
+      expect(global.console.log).toHaveBeenCalledWith('Dev Dependencies: both1 both2 both3');
+    });
+    it('should log only full deps', () => {
+      deps.print(packageDeps.full, 'full');
+      expect(global.console.log).toHaveBeenCalledWith('Dependencies: full1 full2');
+      expect(global.console.log).not.toHaveBeenCalledWith('Dev Dependencies: full1 full2 full3');
+    });
+    it('should log only dev deps', () => {
+      deps.print(packageDeps.dev, 'dev');
+      expect(global.console.log).not.toHaveBeenCalledWith('Dependencies: dev1 dev2');
+      expect(global.console.log).toHaveBeenCalledWith('Dev Dependencies: dev1 dev2 dev3');
+    });
+    it('should log no deps', () => {
+      deps.print(packageDeps.none, 'both');
+      expect(global.console.log).toHaveBeenCalledWith('Dependencies: None found');
+      expect(global.console.log).toHaveBeenCalledWith('Dev Dependencies: None found');
     });
   });
 });
