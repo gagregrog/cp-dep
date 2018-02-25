@@ -2,7 +2,11 @@
   "name": "copy-package",
   "version": "1.0.0",
   "description": "copy a previous projects dependencies to a new project",
-  "main": "index.js",
+  "main": "./index.js",
+  "preferGlobal": true,
+  "bin": {
+    "cp-pkg": "./index.js"
+  },
   "scripts": {
     "test": "jest -i --coverage"
   },

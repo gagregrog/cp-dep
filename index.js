@@ -1,7 +1,10 @@
+#!/usr/bin/env node
+
 'use strict';
 
 const copy = require('clipboardy');
 const getDependencies = require('./lib/get-dependencies.js');
+
 let path = process.argv[2];
 
 const log = input => {
