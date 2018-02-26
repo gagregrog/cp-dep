@@ -9,7 +9,6 @@ global.console = {
   log: jest.fn(),
 };
 
-
 const assets = `${__dirname}/assets`;
 const packageDeps = {
   both: {
