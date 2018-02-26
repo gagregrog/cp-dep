@@ -1,4 +1,7 @@
-# cp-dep
+# cp-dep 
+
+[![Build Status](https://travis-ci.org/RobertMcReed/cp-dep.svg?branch=master)](https://travis-ci.org/RobertMcReed/cp-dep)
+
 A command-line tool to view or copy an npm package's dependencies.
 
 ```bash
