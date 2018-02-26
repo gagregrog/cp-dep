@@ -8,9 +8,10 @@ const switchboard = require('./lib/switchboard.js');
 const {
   help,
   path,
+  copy,
 } = options;
 
-if (help) console.log(usage);
+if (help || (!copy && !path)) console.log(usage);
 else if (!path) console.log('\n  Please provide a valid path to a package.json');
 else {
   switchboard(path, options)
