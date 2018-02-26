@@ -39,6 +39,7 @@ describe('lib/deps.js ', () => {
             expect(pkgDeps.devDependencies).toEqual('devDep1 devDep2 devDep3');
           });
       });
+
       it('should only get full deps', () => {
         return deps.get(`${assets}/both/package.json`, 'full')
           .then(pkgDeps => {
@@ -46,6 +47,7 @@ describe('lib/deps.js ', () => {
             expect(pkgDeps.devDependencies).toBeNull();
           });
       });
+
       it('should only get dev deps', () => {
         return deps.get(`${assets}/both/package.json`, 'dev')
           .then(pkgDeps => {
@@ -63,6 +65,7 @@ describe('lib/deps.js ', () => {
             expect(pkgDeps.devDependencies).toBeNull();
           });
       });
+      
       it('should only get full deps', () => {
         return deps.get(`${assets}/full/package.json`, 'full')
           .then(pkgDeps => {
@@ -70,6 +73,7 @@ describe('lib/deps.js ', () => {
             expect(pkgDeps.devDependencies).toBeNull();
           });
       });
+      
       it('should not be able to get dev deps', () => {
         return deps.get(`${assets}/full/package.json`, 'dev')
           .then(pkgDeps => {
@@ -87,6 +91,7 @@ describe('lib/deps.js ', () => {
             expect(pkgDeps.devDependencies).toEqual('devDep1 devDep2 devDep3');
           });
       });
+      
       it('should not be able to get full deps', () => {
         return deps.get(`${assets}/dev/package.json`, 'full')
           .then(pkgDeps => {
@@ -94,6 +99,7 @@ describe('lib/deps.js ', () => {
             expect(pkgDeps.devDependencies).toBeNull();
           });
       });
+      
       it('should only get dev deps', () => {
         return deps.get(`${assets}/dev/package.json`, 'dev')
           .then(pkgDeps => {
@@ -111,6 +117,7 @@ describe('lib/deps.js ', () => {
             expect(pkgDeps.devDependencies).toBeNull();
           });
       });
+      
       it('should not be able to get full deps', () => {
         return deps.get(`${assets}/none/package.json`, 'full')
           .then(pkgDeps => {
@@ -118,6 +125,7 @@ describe('lib/deps.js ', () => {
             expect(pkgDeps.devDependencies).toBeNull();
           });
       });
+      
       it('should not be able to get dev deps', () => {
         return deps.get(`${assets}/none/package.json`, 'dev')
           .then(pkgDeps => {

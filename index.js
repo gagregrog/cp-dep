@@ -2,7 +2,7 @@
 
 'use strict';
 
-const { options, usage } = require('./lib/cli');
+const { options, usage } = require('./lib/cli.js');
 const switchboard = require('./lib/switchboard.js');
 
 const {
