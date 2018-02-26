@@ -21,7 +21,7 @@ $ npm i -g cp-dep
   * Print dependencies to the console
   * Copy dependencies to the clipboard
       * All dependencies
-      * full dependencies only
+      * Full dependencies only
       * Dev dependencies only
 
 ## How to use
@@ -49,7 +49,7 @@ Use the keyword `cp-dep` and provide a path to a `package.json` file.
     
 1. Copy only the full dependencies from a project in your Documents folder, but don't print the results.
     ```bash
-    $ cp-dep ~/Documents/myOtherProject/ -cx --type dev
+    $ cp-dep ~/Documents/myOtherProject/ -cx --type full
     ```
 
 ## Tests
