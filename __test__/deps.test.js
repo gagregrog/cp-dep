@@ -150,4 +150,23 @@ describe('lib/deps.js ', () => {
       expect(global.console.log).toHaveBeenCalledWith('Dev Dependencies: None found');
     });
   });
+
+  describe('#prepCopy', () => {
+    it('should return an install string for both dependencies', () => {
+      expect(deps.prepCopy(packageDeps.both, 'both'))
+        .toEqual('npm i both1 both2; npm i both1 both2 both3 -D');
+    });
+    it('should return an install string for full dependencies', () => {
+      expect(deps.prepCopy(packageDeps.full, 'full'))
+        .toEqual('npm i full1 full2');
+    });
+    it('should return an install string for dev dependencies', () => {
+      expect(deps.prepCopy(packageDeps.dev, 'dev'))
+        .toEqual('npm i dev1 dev2 dev3 -D');
+    });
+    it('should return an empty string if no dependencies', () => {
+      expect(deps.prepCopy(packageDeps.none, 'both'))
+        .toEqual('');
+    });
+  });
 });
