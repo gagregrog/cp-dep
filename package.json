@@ -5,7 +5,7 @@
   "main": "./index.js",
   "preferGlobal": true,
   "bin": {
-    "cp-pkg": "./index.js"
+    "cp-dep": "./index.js"
   },
   "scripts": {
     "test": "jest -i --coverage",
@@ -31,6 +31,7 @@
   "homepage": "https://github.com/RobertMcReed/cp-dep#readme",
   "dependencies": {
     "clipboardy": "^1.2.3",
+    "command-line-args": "^5.0.2",
     "fs-extra": "^5.0.0"
   },
   "devDependencies": {
