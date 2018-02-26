@@ -2,7 +2,6 @@
 
 require('jest');
 const clipboard = require('clipboardy');
-require('jest-plugin-console-matchers/setup');
 
 const switchboard = require('../lib/switchboard.js');
 

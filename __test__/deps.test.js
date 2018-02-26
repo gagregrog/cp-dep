@@ -2,12 +2,13 @@
 
 require('jest');
 
+const deps = require('../lib/deps.js');
+
 // required for testing console.logs
 global.console = {
   log: jest.fn(),
 };
 
-const deps = require('../lib/deps.js');
 
 const assets = `${__dirname}/assets`;
 const packageDeps = {
