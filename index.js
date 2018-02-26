@@ -2,20 +2,15 @@
 
 'use strict';
 
-const { options, usage } = require('./lib/cli.js');
 const switchboard = require('./lib/switchboard.js');
+const { options, usage, parseError } = require('./lib/cli.js');
 
-const {
-  help,
-  path,
-  copy,
-} = options;
-
-if (help || (!copy && !path)) console.log(usage);
-else if (!path) console.log('\n  Please provide a valid path to a package.json');
+if (parseError) console.log(`\n  ${parseError.name}: "${parseError.value}"\n\n  Please try again.`);
+else if (options.help || (!options.copy && !options.path)) console.log(usage);
+else if (!options.path) console.log('\n  Please provide a valid path to a package.json');
 else {
-  switchboard(path, options)
+  switchboard(options.path, options)
     .catch(error => {
-      if (error.code === 'ENOENT') console.log(`package.json not found at path ${path}`);
+      if (error.code === 'ENOENT') console.log(`package.json not found at path ${options.path}`);
     });
 }
