@@ -32,6 +32,7 @@
   "dependencies": {
     "clipboardy": "^1.2.3",
     "command-line-args": "^5.0.2",
+    "command-line-usage": "^4.1.0",
     "fs-extra": "^5.0.0"
   },
   "devDependencies": {
