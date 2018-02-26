@@ -2,29 +2,15 @@
 
 'use strict';
 
-const copy = require('clipboardy');
-const getDependencies = require('./lib/get-dependencies.js');
+const switchboard = require('./lib/switchboard.js');
+const { options, usage, parseError } = require('./lib/cli.js');
 
-let path = process.argv[2];
-
-const log = input => {
-  if (input) console.log(input);
-};
-
-if (!path) throw new Error('Please provide a path');
-
-if (!(/.*package.json$/).test(path)) {
-  if (!path.endsWith('/')) path += '/';
-  path += 'package.json';
+if (parseError) console.log(`\n  ${parseError.name}: "${parseError.value}"\n\n  Please try again.`);
+else if (options.help || (!options.copy && !options.path)) console.log(usage);
+else if (!options.path) console.log('\n  Please provide a valid path to a package.json');
+else {
+  switchboard(options.path, options)
+    .catch(error => {
+      if (error.code === 'ENOENT') console.log(`package.json not found at path ${options.path}`);
+    });
 }
-
-getDependencies(path)
-  .then(obj => {
-    copy.write(obj.devDependencies + '; ' + obj.dependencies);
-    log(obj.dependencies);
-    log(obj.devDependencies);
-  })
-  .catch(error => {
-    if (error.code === 'ENOENT') console.log(`package.json not found at path ${path}`);
-    else console.log(error);
-  });
