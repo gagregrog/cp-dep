@@ -11,6 +11,10 @@ else {
   if (!options.path) options.path = '.';
   switchboard(options.path, options)
     .catch(error => {
-      if (error.code === 'ENOENT') console.log(`package.json not found at path ${options.path}`);
+      const messagePart = options.path === '.' ?
+        'in current directory.' :
+        `at path ${options.path}`;
+      if (error.code === 'ENOENT') 
+        console.log(`\n  No package.json found ${messagePart}\n\n  Run "cp-dep --help" for help.`);
     });
 }
