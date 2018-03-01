@@ -7,7 +7,7 @@ const switchboard = require('../lib/switchboard.js');
 
 const assets = `${__dirname}/assets`;
 
-// hijack to remove console logs
+// hijack to remove console logs from tests
 global.console = {
   log: jest.fn(),
 };
