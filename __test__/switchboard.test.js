@@ -20,7 +20,7 @@ describe('./lib/switchboard.js', () => {
 
   it('should throw if called with an invalid path', () => {
     const path = './packageSpot/package.json';
-    return switchboard(path, { type: 'both' })
+    return switchboard(path, {})
       .then(Promise.reject)
       .catch(error => {
         expect(error.code).toEqual('ENOENT');
@@ -30,7 +30,7 @@ describe('./lib/switchboard.js', () => {
   it('should add /package.json to the path if the path ends in a directory', () => {
     const path = `${assets}/both`;
     expect(() =>
-      switchboard(path, { type: 'both' })
+      switchboard(path, { full: true })
     ).not.toThrow();
   });
 
@@ -41,6 +41,6 @@ describe('./lib/switchboard.js', () => {
       expect(result).toEqual('npm i devDep1 devDep2 devDep3 -D');
       done();
     };
-    return switchboard(path, { type: 'dev', copy: true, suppress: true }, test);
+    return switchboard(path, { dev: true, copy: true, suppress: true }, test);
   });
 });
