@@ -20,4 +20,4 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
 script:
-  - npm test && sh -e /etc/init.d/xvfb stop
+  - npm test && echo finished
