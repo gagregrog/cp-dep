@@ -81,10 +81,9 @@ $ npm test
     - --type flag replaced with --dev and --full
     - [clipboardy](https://www.npmjs.com/package/clipboardy) dependency replaced with [copy-paste](https://www.npmjs.com/package/copy-paste)
 
-###
 ## License
 
-  [MIT](LICENSE)
+[MIT](LICENSE)
 
 ## Contact
 
