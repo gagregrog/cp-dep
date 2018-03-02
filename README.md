@@ -76,15 +76,14 @@ $ npm test
 - 1.0.1
     - Readme command typos fixed
 
-- 2.0.0
+- 2.0.1
     - Directory now defaults to the current directory
     - --type flag replaced with --dev and --full
     - [clipboardy](https://www.npmjs.com/package/clipboardy) dependency replaced with [copy-paste](https://www.npmjs.com/package/copy-paste)
 
-###
 ## License
 
-  [MIT](LICENSE)
+[MIT](LICENSE)
 
 ## Contact
 
