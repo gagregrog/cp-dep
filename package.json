@@ -1,6 +1,6 @@
 {
   "name": "cp-dep",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A CLI to view or copy dependencies to a new project",
   "main": "./index.js",
   "preferGlobal": true,
@@ -30,9 +30,9 @@
   },
   "homepage": "https://github.com/RobertMcReed/cp-dep#readme",
   "dependencies": {
-    "clipboardy": "^1.2.3",
     "command-line-args": "^5.0.2",
     "command-line-usage": "^4.1.0",
+    "copy-paste": "^1.3.0",
     "fs-extra": "^5.0.0"
   },
   "devDependencies": {
