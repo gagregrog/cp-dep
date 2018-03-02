@@ -28,14 +28,14 @@ describe('./lib/switchboard.js', () => {
   });
   
   it('should add /package.json to the path if the path ends in a directory', () => {
-    const path = `${assets}/both`;
+    const path = `${assets}`;
     expect(() =>
       switchboard(path, { full: true })
     ).not.toThrow();
   });
 
   it('should copy to the clipboard given the copy option', (done) => {
-    const path = `${assets}/dev/`;
+    const path = `${assets}/`;
     const test = () => {
       let result = ncp.paste();
       expect(result).toEqual('npm i devDep1 devDep2 devDep3 -D');
