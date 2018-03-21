@@ -1,6 +1,6 @@
 {
   "name": "cp-dep",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "A CLI to view or copy dependencies to a new project",
   "main": "./index.js",
   "preferGlobal": true,
@@ -36,9 +36,11 @@
     "fs-extra": "^5.0.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "eslint": "^4.18.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0",
+    "istanbul": "^0.4.5",
     "jest": "^22.4.2"
   }
 }

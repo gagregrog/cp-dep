@@ -27,6 +27,10 @@ const packageDeps = {
     dependencies: null,
     devDependencies: null,
   },
+  versions: {
+    dependencies: 'dep1@1.2.3 dep2@5.0.0',
+    devDependencies: 'devDep1@4.18.1 devDep2@12.1.0 devDep3@2.9.0',
+  },
 };
 
 describe('lib/deps.js ', () => {
@@ -34,13 +38,13 @@ describe('lib/deps.js ', () => {
     it('should get both deps', () => {
       return deps.get(`${assets}/package.json`)
         .then(pkgDeps => {
-          expect(pkgDeps.dependencies).toEqual('dep1 dep2');
-          expect(pkgDeps.devDependencies).toEqual('devDep1 devDep2 devDep3');
+          expect(pkgDeps.dependencies).toEqual(packageDeps.versions.dependencies);
+          expect(pkgDeps.devDependencies).toEqual(packageDeps.versions.devDependencies);
         });
     });
 
-    it('should only get full deps', () => {
-      return deps.get(`${assets}/package.json`, 'full')
+    it('should only get full deps and not include versions', () => {
+      return deps.get(`${assets}/package.json`, 'full', true)
         .then(pkgDeps => {
           expect(pkgDeps.dependencies).toEqual('dep1 dep2');
           expect(pkgDeps.devDependencies).toBeNull();
@@ -51,7 +55,7 @@ describe('lib/deps.js ', () => {
       return deps.get(`${assets}/package.json`, 'dev')
         .then(pkgDeps => {
           expect(pkgDeps.dependencies).toBeNull();
-          expect(pkgDeps.devDependencies).toEqual('devDep1 devDep2 devDep3');
+          expect(pkgDeps.devDependencies).toEqual(packageDeps.versions.devDependencies);
         });
     });
   });

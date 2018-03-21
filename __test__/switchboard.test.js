@@ -38,7 +38,7 @@ describe('./lib/switchboard.js', () => {
     const path = `${assets}/`;
     const test = () => {
       let result = ncp.paste();
-      expect(result).toEqual('npm i devDep1 devDep2 devDep3 -D');
+      expect(result).toEqual('npm i devDep1@4.18.1 devDep2@12.1.0 devDep3@2.9.0 -D');
       done();
     };
     return switchboard(path, { dev: true, copy: true, suppress: true }, test);

@@ -1,6 +1,7 @@
 # cp-dep 
 
 [![Build Status](https://travis-ci.org/RobertMcReed/cp-dep.svg?branch=master)](https://travis-ci.org/RobertMcReed/cp-dep)
+[![Coverage Status](https://coveralls.io/repos/github/RobertMcReed/cp-dep/badge.svg?branch=master)](https://coveralls.io/github/RobertMcReed/cp-dep?branch=master)
 
 A command-line tool to view or copy an npm package's dependencies.
 
@@ -35,6 +36,7 @@ Use the keyword `cp-dep` and provide a path to a `package.json` file.
   * `-c`, `--copy`: Copy the npm install command to the clipboard.
   * `-x`, `--suppress`: Do not print the packages to the console.
   * `-h`, `--help`: Show the help file.
+  * `-u`, `--upgrade`: Use current release for packages
 
 ## Examples
 
@@ -51,6 +53,11 @@ Use the keyword `cp-dep` and provide a path to a `package.json` file.
 1. Copy only the full dependencies from a project in your Documents folder, but don't print the results.
     ```bash
     $ cp-dep ~/Documents/myOtherProject/ -cfx
+    ```
+    
+1. Copy all dependencies from the project in your current folder and upgrade to the newest versions.
+    ```bash
+    $ cp-dep -cu
     ```
 
 ## Tests
@@ -80,6 +87,10 @@ $ npm test
     - Directory now defaults to the current directory
     - --type flag replaced with --dev and --full
     - [clipboardy](https://www.npmjs.com/package/clipboardy) dependency replaced with [copy-paste](https://www.npmjs.com/package/copy-paste)
+
+- 3.0.0
+    - Install script now maintains the versioning of the copied dependencies.
+    - Use the -u flag to upgrade all packages to the newest versions
 
 ## License
 
