@@ -8,7 +8,7 @@
     "cp-pkg-test": "./index.js"
   },
   "scripts": {
-    "test": "jest -i --coverage"
+    "test": "jest -i --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",

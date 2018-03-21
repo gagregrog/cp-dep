@@ -1,6 +1,7 @@
 # cp-dep 
 
 [![Build Status](https://travis-ci.org/RobertMcReed/cp-dep.svg?branch=master)](https://travis-ci.org/RobertMcReed/cp-dep)
+[![Coverage Status](https://coveralls.io/repos/github/RobertMcReed/cp-dep/badge.svg?branch=master)](https://coveralls.io/github/RobertMcReed/cp-dep?branch=master)
 
 A command-line tool to view or copy an npm package's dependencies.
 
