@@ -8,7 +8,7 @@
     "cp-dep": "./index.js"
   },
   "scripts": {
-    "test": "jest -i --coverage",
+    "test": "jest -i --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "watch": "jest -i --coverage --watchAll"
   },
   "repository": {
