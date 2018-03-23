@@ -89,8 +89,11 @@ $ npm test
     - [clipboardy](https://www.npmjs.com/package/clipboardy) dependency replaced with [copy-paste](https://www.npmjs.com/package/copy-paste)
 
 - 3.0.0
-    - Install script now maintains the versioning of the copied dependencies.
+    - Install script now maintains the versioning of the copied dependencies
     - Use the -u flag to upgrade all packages to the newest versions
+
+- 3.0.1
+    - Fixed ^ slice issue with versioning
 
 ## License
 

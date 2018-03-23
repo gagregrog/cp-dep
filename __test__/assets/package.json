@@ -30,7 +30,7 @@
   "homepage": "https://github.com/test/cp-dep-test#readme",
   "dependencies": {
     "dep1": "^1.2.3",
-    "dep2": "^5.0.0"
+    "dep2": "5.0.0"
   },
   "devDependencies": {
     "devDep1": "^4.18.1",
